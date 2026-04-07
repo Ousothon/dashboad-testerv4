@@ -1,0 +1,551 @@
+<!doctype html>
+<html lang="km">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Admin Dashboard — User Management</title>
+    <link rel="stylesheet" href="Style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Sans:wght@300;400;500&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <div class="layout">
+      <!-- SIDEBAR -->
+      <aside class="sidebar">
+        <div class="logo">⬡ Thon 404</div>
+
+        <div class="nav-label">Main</div>
+        <a class="nav-item" href="#"> <span class="icon">📊</span> Overview </a>
+        <a class="nav-item active" href="#">
+          <span class="icon">👥</span> Users
+          <span class="nav-badge">1.2k</span>
+        </a>
+        <a class="nav-item" href="#">
+          <span class="icon">🔐</span> Roles & Permissions
+        </a>
+        <a class="nav-item" href="#">
+          <span class="icon">🏢</span> Organizations
+        </a>
+
+        <div class="nav-label">System</div>
+        <a class="nav-item" href="#">
+          <span class="icon">📋</span> Audit Logs
+        </a>
+        <a class="nav-item" href="#">
+          <span class="icon">🔔</span> Notifications
+          <span class="nav-badge">5</span>
+        </a>
+        <a class="nav-item" href="#"> <span class="icon">⚙️</span> Settings </a>
+        <a class="nav-item" href="#"> <span class="icon">🛡️</span> Security </a>
+
+        <div class="nav-label">Reports</div>
+        <a class="nav-item" href="#">
+          <span class="icon">📈</span> Analytics
+        </a>
+        <a class="nav-item" href="#">
+          <span class="icon">📤</span> Export Data
+        </a>
+
+        <div class="sidebar-footer">
+          <div class="avatar-sm">SK</div>
+          <div>
+            <div class="name">Sopheak Keo</div>
+            <div class="role">Super Admin</div>
+          </div>
+        </div>
+      </aside>
+
+      <!-- MAIN CONTENT -->
+      <main class="main">
+        <!-- Topbar -->
+        <div class="topbar">
+          <div>
+            <div class="page-title">User <span>Management</span></div>
+            <div class="page-sub">Manage and monitor all system users</div>
+          </div>
+          <div class="topbar-actions">
+            <div class="search-box">🔍 &nbsp;Search users...</div>
+            <button class="btn btn-ghost">📥 Import</button>
+            <button class="btn btn-primary">+ Add User</button>
+          </div>
+        </div>
+
+        <!-- Stats -->
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">👥</div>
+            <div class="stat-value">12,480</div>
+            <div class="stat-label">Total Users</div>
+            <div class="stat-change up">↑ 8.2% this month</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">✅</div>
+            <div class="stat-value">9,341</div>
+            <div class="stat-label">Active Users</div>
+            <div class="stat-change up">↑ 3.5%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🆕</div>
+            <div class="stat-value">284</div>
+            <div class="stat-label">New This Week</div>
+            <div class="stat-change down">↓ 1.2%</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">⏳</div>
+            <div class="stat-value">47</div>
+            <div class="stat-label">Pending Approval</div>
+            <div class="stat-change up">↑ 12 today</div>
+          </div>
+        </div>
+
+        <!-- User Table -->
+        <div class="section">
+          <div class="section-header">
+            <div>
+              <div class="section-title">All Users</div>
+              <div class="section-meta">Showing 8 of 12,480 users</div>
+            </div>
+            <div style="display: flex; gap: 10px; align-items: center">
+              <div class="filter-tabs">
+                <div class="tab active">All</div>
+                <div class="tab">Active</div>
+                <div class="tab">Pending</div>
+                <div class="tab">Inactive</div>
+              </div>
+              <button
+                class="btn btn-ghost"
+                style="font-size: 0.78rem; padding: 7px 12px"
+              >
+                ⚙ Filter
+              </button>
+            </div>
+          </div>
+
+          <table>
+            <thead>
+              <tr>
+                <th>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </th>
+                <th>User</th>
+                <th>Role</th>
+                <th>Status</th>
+                <th>Joined</th>
+                <th>Last Active</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Row 1 -->
+              <tr>
+                <td>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </td>
+                <td>
+                  <div class="user-cell">
+                    <div
+                      class="avatar"
+                      style="
+                        background: linear-gradient(135deg, #6c47ff, #ff47a3);
+                      "
+                    >
+                      OS
+                    </div>
+                    <div>
+                      <div class="user-name">Ou SoThon</div>
+                      <div class="user-email">ou.sothon@gmail.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge-admin">Admin</span></td>
+                <td>
+                  <span class="status-dot"
+                    ><span class="dot dot-active"></span>Active</span
+                  >
+                </td>
+                <td>Sep 30, 2022</td>
+                <td>2 min ago</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="action-btn">✏️</button>
+                    <button class="action-btn">👁</button>
+                    <button class="action-btn danger">🗑</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Row 2 -->
+              <tr>
+                <td>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </td>
+                <td>
+                  <div class="user-cell">
+                    <div
+                      class="avatar"
+                      style="
+                        background: linear-gradient(135deg, #47c8ff, #6c47ff);
+                      "
+                    >
+                      CT
+                    </div>
+                    <div>
+                      <div class="user-name">Chhoeun Tola</div>
+                      <div class="user-email">chhoen.tola@gmail.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge-mod">Moderator</span></td>
+                <td>
+                  <span class="status-dot"
+                    ><span class="dot dot-active"></span>Active</span
+                  >
+                </td>
+                <td>Mar 5, 2024</td>
+                <td>1 hr ago</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="action-btn">✏️</button>
+                    <button class="action-btn">👁</button>
+                    <button class="action-btn danger">🗑</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Row 3 -->
+              <tr>
+                <td>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </td>
+                <td>
+                  <div class="user-cell">
+                    <div
+                      class="avatar"
+                      style="
+                        background: linear-gradient(135deg, #ffb347, #ff47a3);
+                      "
+                    >
+                      PS
+                    </div>
+                    <div>
+                      <div class="user-name">Pen Soriza</div>
+                      <div class="user-email">pen.soriza@gmail.com</div>
+                    </div>
+                  </div>
+                </td>
+
+                <td><span class="badge badge-user">User</span></td>
+                <td>
+                  <span class="status-dot"
+                    ><span class="dot dot-pending"></span>Pending</span
+                  >
+                </td>
+                <td>Apr 2, 2025</td>
+                <td>3 days ago</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="action-btn">✏️</button>
+                    <button class="action-btn">👁</button>
+                    <button class="action-btn danger">🗑</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Row 4 -->
+              <tr>
+                <td>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </td>
+                <td>
+                  <div class="user-cell">
+                    <div
+                      class="avatar"
+                      style="
+                        background: linear-gradient(135deg, #47ffa0, #47c8ff);
+                      "
+                    >
+                      TV
+                    </div>
+                    <div>
+                      <div class="user-name">Tek Vicheka</div>
+                      <div class="user-email">tek.vicheka@gmail.com</div>
+                    </div>
+                  </div>
+                </td>
+
+                <td><span class="badge badge-user">User</span></td>
+                <td>
+                  <span class="status-dot"
+                    ><span class="dot dot-active"></span>Active</span
+                  >
+                </td>
+                <td>Feb 18, 2024</td>
+                <td>Just now</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="action-btn">✏️</button>
+                    <button class="action-btn">👁</button>
+                    <button class="action-btn danger">🗑</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Row 5 -->
+              <tr>
+                <td>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </td>
+                <td>
+                  <div class="user-cell">
+                    <div
+                      class="avatar"
+                      style="
+                        background: linear-gradient(135deg, #a78bff, #6c47ff);
+                      "
+                    >
+                      TM
+                    </div>
+                    <div>
+                      <div class="user-name">Teav Monyneath</div>
+                      <div class="user-email">teav.monyneath@gmail.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge-admin">Admin</span></td>
+                <td>
+                  <span class="status-dot"
+                    ><span class="dot dot-inactive"></span>Inactive</span
+                  >
+                </td>
+                <td>Nov 3, 2023</td>
+                <td>2 weeks ago</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="action-btn">✏️</button>
+                    <button class="action-btn">👁</button>
+                    <button class="action-btn danger">🗑</button>
+                  </div>
+                </td>
+              </tr>
+              <!-- Row 6 -->
+              <tr>
+                <td>
+                  <input type="checkbox" style="accent-color: var(--g1)" />
+                </td>
+                <td>
+                  <div class="user-cell">
+                    <div
+                      class="avatar"
+                      style="
+                        background: linear-gradient(135deg, #ff47a3, #ffb347);
+                      "
+                    >
+                      SN
+                    </div>
+                    <div>
+                      <div class="user-name">Srin Anann</div>
+                      <div class="user-email">srin.anann@gmail.com</div>
+                    </div>
+                  </div>
+                </td>
+                <td><span class="badge badge-mod">Moderator</span></td>
+                <td>
+                  <span class="status-dot"
+                    ><span class="dot dot-active"></span>Active</span
+                  >
+                </td>
+                <td>Jun 21, 2024</td>
+                <td>5 hr ago</td>
+                <td>
+                  <div class="action-btns">
+                    <button class="action-btn">✏️</button>
+                    <button class="action-btn">👁</button>
+                    <button class="action-btn danger">🗑</button>
+                  </div>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+
+          <div class="pagination">
+            <div class="page-info">Showing 1–6 of 12,480 entries</div>
+            <div class="page-btns">
+              <button class="page-btn">‹</button>
+              <button class="page-btn active">1</button>
+              <button class="page-btn">2</button>
+              <button class="page-btn">3</button>
+              <button class="page-btn">…</button>
+              <button class="page-btn">48</button>
+              <button class="page-btn">›</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Bottom Row -->
+        <div class="bottom-grid">
+          <!-- Growth Chart -->
+          <div class="section">
+            <div class="section-header">
+              <div>
+                <div class="section-title">User Growth</div>
+                <div class="section-meta">Last 7 months</div>
+              </div>
+              <button
+                class="btn btn-ghost"
+                style="font-size: 0.75rem; padding: 6px 12px"
+              >
+                This Year ▾
+              </button>
+            </div>
+            <div style="padding: 20px 24px 24px">
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-bottom: 12px;
+                "
+              >
+                <div>
+                  <div
+                    style="
+                      font-family: &quot;Syne&quot;, sans-serif;
+                      font-size: 1.6rem;
+                      font-weight: 700;
+                      letter-spacing: -0.5px;
+                    "
+                  >
+                    +2,840
+                  </div>
+                  <div style="font-size: 0.75rem; color: var(--muted)">
+                    New users this period
+                  </div>
+                </div>
+                <div style="text-align: right">
+                  <div
+                    style="color: #47ffa0; font-size: 0.85rem; font-weight: 500"
+                  >
+                    ↑ 14.3%
+                  </div>
+                  <div style="font-size: 0.72rem; color: var(--muted)">
+                    vs last period
+                  </div>
+                </div>
+              </div>
+              <div class="mini-chart">
+                <div class="bar" style="height: 35%"></div>
+                <div class="bar" style="height: 52%"></div>
+                <div class="bar" style="height: 45%"></div>
+                <div class="bar" style="height: 68%"></div>
+                <div class="bar" style="height: 60%"></div>
+                <div class="bar" style="height: 85%"></div>
+                <div class="bar" style="height: 100%; opacity: 1"></div>
+              </div>
+              <div
+                style="
+                  display: flex;
+                  justify-content: space-between;
+                  margin-top: 6px;
+                "
+              >
+                <span style="font-size: 0.68rem; color: var(--muted)">Sep</span>
+                <span style="font-size: 0.68rem; color: var(--muted)">Oct</span>
+                <span style="font-size: 0.68rem; color: var(--muted)">Nov</span>
+                <span style="font-size: 0.68rem; color: var(--muted)">Dec</span>
+                <span style="font-size: 0.68rem; color: var(--muted)">Jan</span>
+                <span style="font-size: 0.68rem; color: var(--muted)">Feb</span>
+                <span style="font-size: 0.68rem; color: var(--muted)">Mar</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="section">
+            <div class="section-header">
+              <div>
+                <div class="section-title">Recent Activity</div>
+                <div class="section-meta">Live system log</div>
+              </div>
+              <button
+                class="btn btn-ghost"
+                style="font-size: 0.75rem; padding: 6px 12px"
+              >
+                View All
+              </button>
+            </div>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(108, 71, 255, 0.18)"
+                >
+                  🆕
+                </div>
+                <div>
+                  <div class="activity-text">
+                    <strong>Virak Kim</strong> registered a new account
+                  </div>
+                  <div class="activity-time">2 minutes ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(255, 71, 163, 0.18)"
+                >
+                  🔐
+                </div>
+                <div>
+                  <div class="activity-text">
+                    <strong>Dara Nhem</strong> role changed to <em>Inactive</em>
+                  </div>
+                  <div class="activity-time">14 minutes ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(71, 255, 160, 0.15)"
+                >
+                  ✅
+                </div>
+                <div>
+                  <div class="activity-text">
+                    <strong>Lina Seng</strong> account approved
+                  </div>
+                  <div class="activity-time">1 hour ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(255, 179, 71, 0.15)"
+                >
+                  ⚠️
+                </div>
+                <div>
+                  <div class="activity-text">
+                    Failed login attempt — IP: 192.168.4.21
+                  </div>
+                  <div class="activity-time">2 hours ago</div>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div
+                  class="activity-icon"
+                  style="background: rgba(71, 200, 255, 0.15)"
+                >
+                  📤
+                </div>
+                <div>
+                  <div class="activity-text">
+                    <strong>Sopheak Keo</strong> exported user report
+                  </div>
+                  <div class="activity-time">3 hours ago</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+    <link rel="stylesheet" href="script.js" />
+  </body>
+</html>
